@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/taiar/asdf-R.svg?branch=master)](https://travis-ci.org/taiar/asdf-R)
-
-# asdf-R
+# asdf-R [![Build Status](https://travis-ci.org/taiar/asdf-R.svg?branch=master)](https://travis-ci.org/taiar/asdf-R)
 
 [R](https://www.r-project.org/) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 
