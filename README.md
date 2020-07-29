@@ -6,10 +6,11 @@
 
 * Mac
     1. [Homebrew](https://brew.sh): used to install the remainder of the dependencies
-    1. ```brew install gcc xz```
+    2. ```brew install gcc xz```
 * Linux
     * Ubuntu / Debian
-        1. ```sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran```
+        1. ```sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran ```
+        2. ```sudo apt-get install liblzma-dev liblzma5 libbz2-1.0 libbz2-dev```
 
 ## Install
 
