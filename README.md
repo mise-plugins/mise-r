@@ -11,6 +11,7 @@
     * Ubuntu / Debian
         1. ```sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran ```
         2. ```sudo apt-get install liblzma-dev liblzma5 libbz2-1.0 libbz2-dev```
+        3. ```sudo apt-get install xorg-dev libbz2-dev liblzma-dev libpcre2-dev```
 
 ## Install
 
