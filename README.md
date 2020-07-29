@@ -15,7 +15,7 @@
 ## Install
 
 ```
-asdf plugin-add R https://github.com/iroddis/asdf-R.git
+asdf plugin-add R https://github.com/taiar/asdf-R.git
 ```
 
 ## ASDF options
