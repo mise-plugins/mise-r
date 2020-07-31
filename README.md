@@ -33,8 +33,3 @@ When installing R using `asdf install`, you can pass custom configure options wi
 RStudio (and some other libs) requires building R shared library. In order to do that pass an extra configure option to `asdf install`:
 
 ```R_EXTRA_CONFIGURE_OPTIONS=--enable-R-shlib asdf install R <version>```
-
-## Thanks
-
-Thanks to [asdf-postgres](http://github.com/smashedtoatoms/asdf-postgres) for providing an awesome plugin
-that was easy to modify for this language.
