@@ -1,17 +1,22 @@
 # asdf-R [![Build Status](https://travis-ci.org/taiar/asdf-R.svg?branch=master)](https://travis-ci.org/taiar/asdf-R)
 
-[R](https://www.r-project.org/) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
+[R](https://www.r-project.org/) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager | [plugins repository](https://github.com/asdf-vm/asdf-plugins)
 
 ## Dependencies
 
-* Mac
-    1. [Homebrew](https://brew.sh): used to install the remainder of the dependencies
-    2. ```brew install gcc xz libxt cairo```
-* Linux
-    * Ubuntu / Debian
-        1. ```sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran ```
-        2. ```sudo apt-get install liblzma-dev liblzma5 libbz2-1.0 libbz2-dev```
-        3. ```sudo apt-get install xorg-dev libbz2-dev liblzma-dev libpcre2-dev```
+### Mac
+
+1. [Homebrew](https://brew.sh): used to install the remainder of the dependencies
+2. ```brew install gcc xz libxt cairo```
+
+More details on environment variables setup for Mac OS builds can be found [here](https://github.com/taiar/asdf-R/pull/2#issue-615542640).
+
+### Linux
+
+#### Ubuntu / Debian
+1. ```sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran ```
+2. ```sudo apt-get install liblzma-dev liblzma5 libbz2-1.0 libbz2-dev```
+3. ```sudo apt-get install xorg-dev libbz2-dev liblzma-dev libpcre2-dev```
 
 ## Install
 
@@ -28,7 +33,7 @@ When installing R using `asdf install`, you can pass custom configure options wi
 * `R_CONFIGURE_OPTIONS` - use only your configure options
 * `R_EXTRA_CONFIGURE_OPTIONS` - append these configure options along with ones that this plugin already uses
 
-## Building R Shared Library
+### Building R Shared Library
 
 RStudio (and some other libs) requires building R shared library. In order to do that pass an extra configure option to `asdf install`:
 
