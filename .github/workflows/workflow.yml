@@ -2,6 +2,7 @@ name: Main workflow
 
 on:
   pull_request:
+  push:
   schedule:
     - cron: 0 0 * * 5
 
@@ -16,9 +17,35 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get -qq update; sudo apt-get -y install build-essential libcurl3-dev libreadline-dev gfortran liblzma-dev liblzma5 libbz2-1.0 libbz2-dev xorg-dev libbz2-dev liblzma-dev libpcre2-dev
+        run: sudo apt-get update && sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran liblzma-dev liblzma5 libbz2-1.0 libbz2-dev xorg-dev libbz2-dev liblzma-dev libpcre2-dev --yes
 
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:
           command: R --version
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install ShellCheck
+        run: brew install shellcheck
+
+      - name: Run ShellCheck
+        run: make lint
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install shfmt
+        run: brew install shfmt
+
+      - name: Run shfmt
+        run: make fmt-check
