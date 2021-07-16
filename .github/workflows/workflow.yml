@@ -25,6 +25,16 @@ jobs:
         if: runner.os == 'macOS'
         run: brew install gcc xz libxt cairo
 
+      - name: Symlink gfortran on the macOS runners
+        if: runner.os == 'macOS'
+        run: |
+          # make sure gfortran is available
+          # https://github.com/actions/virtual-environments/issues/2524
+          sudo ln -s /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
+          sudo mkdir /usr/local/gfortran
+          sudo ln -s /usr/local/Cellar/gcc@11/*/lib/gcc/11 /usr/local/gfortran/lib
+          gfortran --version
+
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:
