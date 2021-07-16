@@ -11,13 +11,19 @@ jobs:
     strategy:
       matrix:
         os:
+          - macos-latest
           - ubuntu-latest
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Install dependencies
+      - name: Install Linux system packages
+        if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install build-essential libcurl3-dev libreadline-dev gfortran liblzma-dev liblzma5 libbz2-1.0 libbz2-dev xorg-dev libbz2-dev liblzma-dev libpcre2-dev --yes
+
+      - name: Install macOS system packages
+        if: runner.os == 'macOS'
+        run: brew install gcc xz libxt cairo
 
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
