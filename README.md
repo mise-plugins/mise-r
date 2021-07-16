@@ -1,4 +1,4 @@
-# asdf-r [![Build Status](https://travis-ci.org/asdf-community/asdf-r.svg?branch=master)](https://travis-ci.org/asdf-community/asdf-r)
+# asdf-r
 
 [R](https://www.r-project.org/) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager | [plugins repository](https://github.com/asdf-vm/asdf-plugins)
 
