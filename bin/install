@@ -96,7 +96,7 @@ get_download_url() {
   local version=$2
   local major_version
   major_version="$(echo "$version" | cut -d. -f1)"
-  echo "https://mirrors.nics.utk.edu/cran/src/base/R-${major_version}/R-${version}.tar.gz"
+  echo "https://cloud.r-project.org/src/base/R-${major_version}/R-${version}.tar.gz"
 }
 
 install_R "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"

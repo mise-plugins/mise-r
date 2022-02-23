@@ -8,7 +8,7 @@ function sort_versions() {
 versions=""
 
 for major_version in {2..4}; do
-  versions="${versions} $(curl --silent "https://mirrors.nics.utk.edu/cran/src/base/R-${major_version}/" | tr '<>' ',,' | awk -F, '/tar.gz/{ print $13 }' | sed -e 's/.tar.gz//g' -e 's/R-//')"
+  versions="${versions} $(curl --silent "https://cloud.r-project.org/src/base/R-${major_version}/" | tr '<>' ',,' | awk -F, '/tar.gz/{ print $13 }' | sed -e 's/.tar.gz//g' -e 's/R-//')"
 done
 
 echo "$versions" | sort_versions | xargs echo
