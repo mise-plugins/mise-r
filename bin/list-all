@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-function sort_versions() {
-  sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
-    LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
-}
-
+# Get versions (only fully numeric versions) for each major release
 versions=""
-
 for major_version in {2..4}; do
-  versions="${versions} $(curl --silent "https://cloud.r-project.org/src/base/R-${major_version}/" | tr '<>' ',,' | awk -F, '/tar.gz/{ print $13 }' | sed -e 's/.tar.gz//g' -e 's/R-//')"
+  versions="${versions}
+$(curl -sL "https://cloud.r-project.org/src/base/R-${major_version}/" | grep -o '"R-[0-9]*.[0-9]*.[0-9]*.tar.gz"' | sed 's/"R-\(.*\).tar.gz"$/\1/')"
 done
 
-echo "$versions" | sort_versions | xargs echo
+# Sort versions and remove any blank lines
+echo "$versions" | LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n | sed '/^ *$/d'
