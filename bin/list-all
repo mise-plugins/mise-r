@@ -8,4 +8,5 @@ $(curl -sL "https://cloud.r-project.org/src/base/R-${major_version}/" | grep -o 
 done
 
 # Sort versions and remove any blank lines
-echo "$versions" | LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n | sed '/^ *$/d'
+echo "$versions" | LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n |  sed ':a; N; $!ba; s/\n/ /g'
+
