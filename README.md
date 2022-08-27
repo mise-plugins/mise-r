@@ -7,7 +7,7 @@
 ### Mac
 
 1. [Homebrew](https://brew.sh): used to install the remainder of the dependencies
-2. ```brew install gcc xz libxt cairo```
+2. ```brew install gcc xz libxt cairo pcre2```
 
 More details on environment variables setup for Mac OS builds can be found [here](https://github.com/asdf-community/asdf-R/pull/2#issue-615542640).
 
