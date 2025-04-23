@@ -37,8 +37,8 @@ When installing R using `asdf install`, you can pass custom configure options wi
 
 RStudio (and some other libs) requires building R shared library. In order to do that pass an extra configure option to `asdf install`:
 
-```R_EXTRA_CONFIGURE_OPTIONS=--enable-R-shlib asdf install R <version>```
+```R_EXTRA_CONFIGURE_OPTIONS=--enable-R-shlib asdf install r <version>```
 
 maibe you'll need Cairo as well:
 
-```R_EXTRA_CONFIGURE_OPTIONS='--enable-R-shlib --with-cairo' asdf install R <version>```
+```R_EXTRA_CONFIGURE_OPTIONS='--enable-R-shlib --with-cairo' asdf install r <version>```
